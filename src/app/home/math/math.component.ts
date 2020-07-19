@@ -31,13 +31,14 @@ export class MathComponent implements OnInit {
 
 
     // this.kousuan = this.kousuan.concat(this.mservice.getMultiplyQs(5));
-    this.kousuan = this.kousuan.concat(this.mservice.getPlusQs(5));
-    this.kousuan = this.kousuan.concat(this.mservice.getDigitPlusQs(5));
-    this.kousuan = this.kousuan.concat(this.mservice.getDigitMinusQs(5));
-    this.kousuan = this.kousuan.concat(this.mservice.getMinusQs(5));
-    this.kousuan = this.kousuan.concat(this.mservice.getSimpleMultiplyQs(5));
+    this.kousuan = this.kousuan.concat(this.mservice.getPlusQs(6));
+    this.kousuan = this.kousuan.concat(this.mservice.getDigitPlusQs(6));
+    this.kousuan = this.kousuan.concat(this.mservice.getDigitMinusQs(6));
+    this.kousuan = this.kousuan.concat(this.mservice.getMinusQs(6));
+    this.kousuan = this.kousuan.concat(this.mservice.getSimpleMultiplyQs(12));
+    this.kousuan = this.kousuan.concat(this.mservice.getSimpleDivideQs(12));
 
-    this.shushi = this.shushi.concat(this.mservice.getMultiplyQs(5));
+    this.shushi = this.shushi.concat(this.mservice.getMultiplyQs(6));
   }
 
 

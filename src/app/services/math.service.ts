@@ -23,6 +23,8 @@ export class MathService {
     return util.get2DigitNumber().toString().concat(' + ').concat(util.get2DigitNumber().toString()).concat(' = ');
   }
 
+
+  // 整数减法
   getMinusQs(n) {
     const result: Array<string> = [];
     for (let i = 0; i < n; i++) {
@@ -33,10 +35,10 @@ export class MathService {
 
   private getMinusQ() {
     let i = util.get3DigitNumber();
-    let j = util.get3DigitNumber();
+    let j = util.get2DigitNumber();
     while (i <= j) {
       i = util.get3DigitNumber();
-      j = util.get3DigitNumber();
+      j = util.get2DigitNumber();
     }
     return i.toString().concat(' - ').concat(j.toString()).concat('=');
   }
@@ -109,6 +111,27 @@ export class MathService {
     }
 
     return i.toString().concat(' - ').concat(j.toString()).concat(' = ');
+  }
+
+
+  // 除法
+
+  getSimpleDivideQs(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+      result.push(this.getSimpleDivideQ());
+    }
+    return result;
+  }
+  private getSimpleDivideQ() {
+    let i = util.get1DigitNumber();
+    let j = util.get2DigitNumber();
+
+    while (i * j > 1000 || i * j <= 100) {
+      i = util.get1DigitNumber();
+      j = util.get2DigitNumber() * 10;
+    }
+    return (i * j).toString().concat(' ÷ ').concat(i.toString()).concat(' = ');
   }
 
 }
