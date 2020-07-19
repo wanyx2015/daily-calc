@@ -29,3 +29,9 @@
   grid-template-columns: repeat(6, auto);
   grid-gap: 1rem;
 }
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 1rem;
+}

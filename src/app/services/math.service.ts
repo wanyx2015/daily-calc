@@ -40,7 +40,7 @@ export class MathService {
       i = util.get3DigitNumber();
       j = util.get2DigitNumber();
     }
-    return i.toString().concat(' - ').concat(j.toString()).concat('=');
+    return i.toString().concat(' - ').concat(j.toString()).concat(' = ');
   }
 
   // 整数乘法
@@ -131,7 +131,186 @@ export class MathService {
       i = util.get1DigitNumber();
       j = util.get2DigitNumber() * 10;
     }
+
     return (i * j).toString().concat(' ÷ ').concat(i.toString()).concat(' = ');
+  }
+
+
+  // a*(b+c)
+  // a*(b-c)
+
+  // a-(b-c)
+  // a-(b+c)
+  // a-b-c
+  // a-b+c
+
+  // (a+b)*c
+  // (a+b)/c
+
+  // a+b*c
+  // a+b/c
+
+  // a-b*c
+  // a-b/c
+
+  // (a-b)*c
+  // (a-b)/c
+
+
+  // a/(b+c)
+  // a/(b-c)
+
+
+
+
+
+  // ****************
+  // ****************
+  // ****************
+  // ****************
+
+  // a*(b+c)
+  // a*(b-c)
+  getComplexQ1(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+
+      if (util.get2DigitNumber() < 50) {
+        result.push(this.returnMultiply(
+          util.get2DigitNumber(),
+          this.returnPlusUnit(util.get2DigitNumber(), util.get2DigitNumber())) + ' = ');
+      } else {
+        result.push(
+          this.returnMultiply(
+            util.get2DigitNumber(),
+            this.returnMinusUnit(util.get2DigitNumber(), util.get2DigitNumber())) + ' = ');
+      }
+
+    }
+    return result;
+  }
+
+
+  // a-(b-c)
+  getComplexQ2(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+
+      let a = util.get2DigitNumber();
+      let b = util.get2DigitNumber();
+      let c = util.get2DigitNumber();
+
+      while (a < (b + c)) {
+        a = util.get2DigitNumber();
+        b = util.get2DigitNumber();
+        c = util.get2DigitNumber();
+      }
+
+      result.push(this.returnMinus(a, this.returnPlusUnit(b, c)) + ' = ');
+
+    }
+    return result;
+  }
+
+  // a+b*c
+  // a-b*c
+  getComplexQ3(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+
+      let a = util.get3DigitNumber();
+      let b = util.get1DigitNumber();
+      let c = util.get1DigitNumber();
+
+      while (a < (b * c)) {
+        a = util.get3DigitNumber();
+        b = util.get1DigitNumber();
+        c = util.get1DigitNumber();
+        console.log(a, b, c);
+      }
+
+      b < c
+        ? result.push(this.returnMinus(a, this.returnMultiply(b, c)) + ' = ')
+        : result.push(this.returnPlus(a, this.returnMultiply(b, c)) + ' = ');
+
+    }
+    return result;
+  }
+
+  // a + b/c
+  // a - b/c
+  getComplexQ4(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+
+      let a = util.get3DigitNumber();
+      let b = util.get1DigitNumber();
+      let c = util.get1DigitNumber();
+
+      while (a < (b * c)) {
+        a = util.get3DigitNumber();
+        b = util.get1DigitNumber();
+        c = util.get1DigitNumber();
+        console.log(a, b, c);
+      }
+
+      b < c
+        ? result.push(this.returnMinus(a, this.returnDivide(b * c, c)) + ' = ')
+        : result.push(this.returnPlus(a, this.returnDivide(b * c, c)) + ' = ');
+
+    }
+    return result;
+  }
+
+  // (a + b) * c
+  getComplexQ5(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+
+      let a = util.get2DigitNumber();
+      let b = util.get2DigitNumber();
+      let c = util.get1DigitNumber();
+      let d = util.get1DigitNumber();
+
+      while (a < b) {
+        a = util.get2DigitNumber();
+        b = util.get2DigitNumber();
+        c = util.get1DigitNumber();
+        d = util.get1DigitNumber();
+        // console.log(a, b, c);
+      }
+
+      d < c
+        ? result.push(this.returnMultiply(this.returnPlusUnit(a, b), c) + ' = ')
+        : result.push(this.returnMultiply(this.returnMinusUnit(a, b), c) + ' = ');
+    }
+    return result;
+  }
+
+
+  private returnPlus(num1, num2): string {
+    return num1.toString().concat(' + ').concat(num2.toString());
+  }
+  private returnPlusUnit(num1, num2): string {
+    return '(' + this.returnPlus(num1, num2) + ')';
+  }
+  private returnMinus(num1, num2): string {
+    return num1 + ' - ' + num2;
+  }
+  private returnMinusUnit(num1, num2): string {
+    return '(' + this.returnMinus(num1, num2) + ')';
+  }
+  private returnMultiply(num1, num2): string {
+    return num1 + ' x ' + num2;
+  }
+  private returnMultiplyUnit(num1, num2): string {
+    return '(' + this.returnMultiply(num1, num2) + ')';
+  }
+  private returnDivide(num1, num2): string {
+    return num1 + ' ÷ ' + num2;
+  }
+  private returnDivideUnit(num1, num2): string {
+    return '(' + this.returnDivide(num1, num2) + ')';
   }
 
 }
