@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container grid">
 
-  <h3 class='text-center'>口算题</h3>
+  <h3 class='title text-center'>口算题</h3>
 
   <!-- <div class="grid">
 
@@ -21,28 +21,28 @@
 
 
 
-  <h5>直接写出得数</h5>
+  <h5 class="title">直接写出得数</h5>
 
 
-  <div class="grid mb-5">
+  <div class="kousuan mb-5">
     <div *ngFor="let m of kousuan">
       <div>{{m}}</div>
     </div>
   </div>
 
-  <h5>竖式</h5>
+  <h5 class="title">竖式</h5>
 
 
-  <div class="grid mb-5">
-    <div *ngFor="let m of shushi">
-      <div>{{m}}</div>
+  <div class="shushi mb-5 ">
+    <div class='shushi-item' *ngFor="let m of shushi">
+      <div> {{m}} </div>
     </div>
   </div>
 
-  <h5>连等式</h5>
+  <h5 class="title">递等式</h5>
 
 
-  <div class="grid2 mb-5">
+  <div class="didengshi mb-5">
     <div *ngFor="let m of lianshi">
       <div>{{m}}</div>
     </div>
@@ -52,7 +52,7 @@
 
 
   <!--
-    <div class="grid">
+    <div class="grid3">
       <div class="item">Item 1</div>
       <div class="item">Item 2</div>
       <div class="item">Item 3</div>
@@ -62,4 +62,4 @@
       <div class="item">Item 7</div>
     </div> -->
 
-  </div>
+</div>

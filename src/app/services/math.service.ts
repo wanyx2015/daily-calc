@@ -74,7 +74,7 @@ export class MathService {
       i = util.get1DigitNumber() * 10;
       j = util.get2DigitNumber();
     }
-    console.log(i, j);
+    // console.log(i, j);
     return j.toString().concat(' x ').concat(i.toString()).concat(' = ');
 
   }
@@ -174,24 +174,26 @@ export class MathService {
   getComplexQ1(n) {
     const result: Array<string> = [];
     for (let i = 0; i < n; i++) {
-
-      if (util.get2DigitNumber() < 50) {
-        result.push(this.returnMultiply(
-          util.get2DigitNumber(),
-          this.returnPlusUnit(util.get2DigitNumber(), util.get2DigitNumber())) + ' = ');
-      } else {
-        result.push(
-          this.returnMultiply(
-            util.get2DigitNumber(),
-            this.returnMinusUnit(util.get2DigitNumber(), util.get2DigitNumber())) + ' = ');
+      let a = util.get1DigitNumber();
+      let b = util.get2DigitNumber();
+      let c = util.get2DigitNumber();
+      const d = util.get2DigitNumber();
+      const e = util.get2DigitNumber();
+      while (b < c) {
+        a = util.get1DigitNumber();
+        b = util.get2DigitNumber();
+        c = util.get2DigitNumber();
       }
 
+      d < e
+        ? result.push(this.returnMultiply(a, this.returnPlusUnit(b, c)) + ' = ')
+        : result.push(this.returnMultiply(a, this.returnMinusUnit(b, c)) + ' = ');
     }
     return result;
   }
 
 
-  // a-(b-c)
+  // a-(b+c)
   getComplexQ2(n) {
     const result: Array<string> = [];
     for (let i = 0; i < n; i++) {
@@ -211,10 +213,30 @@ export class MathService {
     }
     return result;
   }
+  // a-(b-c)
+  getComplexQ3(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+
+      let a = util.get2DigitNumber();
+      let b = util.get2DigitNumber();
+      let c = util.get2DigitNumber();
+
+      while (b < c || a < (b - c)) {
+        a = util.get2DigitNumber();
+        b = util.get2DigitNumber();
+        c = util.get2DigitNumber();
+      }
+
+      result.push(this.returnMinus(a, this.returnMinusUnit(b, c)) + ' = ');
+
+    }
+    return result;
+  }
 
   // a+b*c
   // a-b*c
-  getComplexQ3(n) {
+  getComplexQ4(n) {
     const result: Array<string> = [];
     for (let i = 0; i < n; i++) {
 
@@ -226,7 +248,7 @@ export class MathService {
         a = util.get3DigitNumber();
         b = util.get1DigitNumber();
         c = util.get1DigitNumber();
-        console.log(a, b, c);
+        // console.log(a, b, c);
       }
 
       b < c
@@ -239,7 +261,7 @@ export class MathService {
 
   // a + b/c
   // a - b/c
-  getComplexQ4(n) {
+  getComplexQ5(n) {
     const result: Array<string> = [];
     for (let i = 0; i < n; i++) {
 
@@ -263,7 +285,7 @@ export class MathService {
   }
 
   // (a + b) * c
-  getComplexQ5(n) {
+  getComplexQ6(n) {
     const result: Array<string> = [];
     for (let i = 0; i < n; i++) {
 
@@ -283,6 +305,34 @@ export class MathService {
       d < c
         ? result.push(this.returnMultiply(this.returnPlusUnit(a, b), c) + ' = ')
         : result.push(this.returnMultiply(this.returnMinusUnit(a, b), c) + ' = ');
+    }
+    return result;
+  }
+
+  // (a + b) / c
+  // a1 = 2 digit * 1 digit > 100 ===> a+b = a1, 1 digit = c, 2 digit = d, a = a1 - d, b = a1 - a
+  // a+b = a1
+  // c = 1 digit
+  // a = a1 - 2 digit
+  // b = 2 digit
+
+  getComplexQ7(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+
+      let d = util.get2DigitNumber();
+      let c = util.get1DigitNumber();
+      let a = 0;
+      let b = util.get2DigitNumber();
+
+      while (d * c < 100) {
+        b = util.get2DigitNumber();
+        c = util.get1DigitNumber();
+        d = util.get2DigitNumber();
+      }
+      a = d * c - b;
+      // console.log(a, b, c);
+      result.push(this.returnDivide(this.returnPlusUnit(a, b), c) + ' = ');
     }
     return result;
   }

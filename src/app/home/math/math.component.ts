@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MathComponent implements OnInit {
 
-
   kousuan: Array<string> = [];
   shushi: Array<string> = [];
   lianshi: Array<string> = [];
@@ -20,15 +19,17 @@ export class MathComponent implements OnInit {
     this.kousuan = this.kousuan.concat(this.mservice.getDigitMinusQs(6));
     this.kousuan = this.kousuan.concat(this.mservice.getMinusQs(6));
     this.kousuan = this.kousuan.concat(this.mservice.getSimpleMultiplyQs(12));
-    this.kousuan = this.kousuan.concat(this.mservice.getSimpleDivideQs(12));
+    this.kousuan = this.kousuan.concat(this.mservice.getSimpleDivideQs(14));
 
-    this.shushi = this.shushi.concat(this.mservice.getMultiplyQs(6));
+    this.shushi = this.shushi.concat(this.mservice.getMultiplyQs(20));
 
-    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ1(4));
-    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ2(8));
-    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ3(8));
-    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ4(8));
-    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ5(8));
+    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ1(2));
+    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ2(4));
+    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ3(3));
+    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ4(3));
+    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ5(2));
+    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ6(2));
+    this.lianshi = this.lianshi.concat(this.mservice.getComplexQ7(4));
   }
 
 

@@ -14,7 +14,7 @@ export const get1DigitNumber = function () {
 
 export const get2DigitNumber = function () {
   let i = 0;
-  while (i < 10) { i = Math.floor(Math.random() * 100); }
+  while (i <= 10) { i = Math.floor(Math.random() * 100); }
   return i;
 }
 
