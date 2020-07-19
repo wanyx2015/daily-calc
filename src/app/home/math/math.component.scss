@@ -25,18 +25,19 @@
 
 
 .grid {
-  // display: grid;
-  // grid-template-columns: repeat(6, auto);
+
+  .reload {
+    cursor: pointer;
+    color: blue;
+  }
 
   .title {
-    // grid-template-columns: 100%;
-    padding-bottom: 1rem;
-
+    // padding-bottom: 10px;
   }
 
   .kousuan {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 5px;
 
     grid-template-columns: repeat(6, auto);
   }
@@ -53,8 +54,12 @@
 
   .didengshi {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     grid-gap: 1rem;
+
+    .dds-item{
+      height: 80px;
+    }
   }
 }
 

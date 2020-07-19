@@ -1,5 +1,7 @@
-import { MathService } from './../../services/math.service';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
+import { MathService } from './../../services/math.service';
 
 @Component({
   selector: 'app-math',
@@ -12,7 +14,18 @@ export class MathComponent implements OnInit {
   shushi: Array<string> = [];
   lianshi: Array<string> = [];
 
-  constructor(private mservice: MathService) {
+  constructor(private mservice: MathService, private titleService: Title) {
+
+    this.titleService.setTitle('每日计算（90题）');
+
+    this.generateContent();
+
+  }
+
+  generateContent() {
+    this.kousuan = [];
+    this.lianshi = [];
+    this.shushi = [];
 
     this.kousuan = this.kousuan.concat(this.mservice.getPlusQs(6));
     this.kousuan = this.kousuan.concat(this.mservice.getDigitPlusQs(6));
@@ -31,7 +44,6 @@ export class MathComponent implements OnInit {
     this.lianshi = this.lianshi.concat(this.mservice.getComplexQ6(2));
     this.lianshi = this.lianshi.concat(this.mservice.getComplexQ7(4));
   }
-
 
   ngOnInit(): void {
   }

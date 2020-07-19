@@ -186,8 +186,8 @@ export class MathService {
       }
 
       d < e
-        ? result.push(this.returnMultiply(a, this.returnPlusUnit(b, c)) + ' = ')
-        : result.push(this.returnMultiply(a, this.returnMinusUnit(b, c)) + ' = ');
+        ? result.push(this.returnMultiply(a, this.returnPlusUnit(b, c)))
+        : result.push(this.returnMultiply(a, this.returnMinusUnit(b, c)));
     }
     return result;
   }
@@ -208,7 +208,7 @@ export class MathService {
         c = util.get2DigitNumber();
       }
 
-      result.push(this.returnMinus(a, this.returnPlusUnit(b, c)) + ' = ');
+      result.push(this.returnMinus(a, this.returnPlusUnit(b, c)));
 
     }
     return result;
@@ -228,7 +228,7 @@ export class MathService {
         c = util.get2DigitNumber();
       }
 
-      result.push(this.returnMinus(a, this.returnMinusUnit(b, c)) + ' = ');
+      result.push(this.returnMinus(a, this.returnMinusUnit(b, c)));
 
     }
     return result;
@@ -252,8 +252,8 @@ export class MathService {
       }
 
       b < c
-        ? result.push(this.returnMinus(a, this.returnMultiply(b, c)) + ' = ')
-        : result.push(this.returnPlus(a, this.returnMultiply(b, c)) + ' = ');
+        ? result.push(this.returnMinus(a, this.returnMultiply(b, c)))
+        : result.push(this.returnPlus(a, this.returnMultiply(b, c)));
 
     }
     return result;
@@ -277,8 +277,8 @@ export class MathService {
       }
 
       b < c
-        ? result.push(this.returnMinus(a, this.returnDivide(b * c, c)) + ' = ')
-        : result.push(this.returnPlus(a, this.returnDivide(b * c, c)) + ' = ');
+        ? result.push(this.returnMinus(a, this.returnDivide(b * c, c)))
+        : result.push(this.returnPlus(a, this.returnDivide(b * c, c)));
 
     }
     return result;
@@ -303,8 +303,8 @@ export class MathService {
       }
 
       d < c
-        ? result.push(this.returnMultiply(this.returnPlusUnit(a, b), c) + ' = ')
-        : result.push(this.returnMultiply(this.returnMinusUnit(a, b), c) + ' = ');
+        ? result.push(this.returnMultiply(this.returnPlusUnit(a, b), c))
+        : result.push(this.returnMultiply(this.returnMinusUnit(a, b), c));
     }
     return result;
   }
@@ -332,7 +332,7 @@ export class MathService {
       }
       a = d * c - b;
       // console.log(a, b, c);
-      result.push(this.returnDivide(this.returnPlusUnit(a, b), c) + ' = ');
+      result.push(this.returnDivide(this.returnPlusUnit(a, b), c));
     }
     return result;
   }
