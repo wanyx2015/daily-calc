@@ -5,21 +5,21 @@
     <a (click)="generateContent()">生成新题目</a>
   </div>
 
-  <h5 class="title">直接写出得数（50题）</h5>
+  <h5 class="title">一、直接写出得数（50题）</h5>
   <div class="kousuan mb-3">
     <div *ngFor="let m of kousuan">
       <div>{{m}}</div>
     </div>
   </div>
 
-  <h5 class="title">竖式（20题）</h5>
+  <h5 class="title">二、竖式（20题）</h5>
   <div class="shushi mb-3 ">
     <div class='shushi-item' *ngFor="let m of shushi">
       <div> {{m}} </div>
     </div>
   </div>
 
-  <h5 class="title">递等式（20题）</h5>
+  <h5 class="title">三、递等式（20题）</h5>
   <div class="didengshi mb-3">
     <div class="dds-item" *ngFor="let m of lianshi">
       <div>{{m}}</div>
