@@ -1,0 +1,36 @@
+.grid {
+
+  .reload {
+    cursor: pointer;
+    color: blue;
+    font-size: 14px;
+  }
+
+  .title {
+    padding-bottom: 10px;
+  }
+
+  .kousuan {
+    display: grid;
+    gap: 3rem 0;
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .shushi {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+
+    .item {
+      height: 20rem;
+    }
+  }
+
+  .didengshi {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+
+    .item {
+      height: 15rem;
+    }
+  }
+}
