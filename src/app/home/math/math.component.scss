@@ -1,0 +1,31 @@
+// .grid {
+//   display: grid;
+//   grid-template-columns: 200px 200px 200px;
+//   grid-template-columns: 20% 20% 20% 20% 20%;
+//   grid-template-columns: 20% 20% auto 20%;
+//   grid-template-columns: auto auto auto;
+//   grid-template-columns: repeat(3, 200px);
+//   grid-template-columns: repeat(4, auto);
+//   grid-template-columns: 1fr 2fr 3fr;
+
+
+//   // similar to padding
+//   grid-gap: 1rem;
+// }
+
+
+// .item {
+//   padding: 3rem;
+//   border: #ccc solid 1px;
+//   background-color: #f4f4f4;
+//   font-size: 1.3rem;
+//   font-weight: bold;
+//   text-align: center;
+// }
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 1rem;
+}
