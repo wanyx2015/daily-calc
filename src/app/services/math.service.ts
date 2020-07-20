@@ -43,17 +43,21 @@ export class MathService {
     return i.toString().concat(' - ').concat(j.toString()).concat(' = ');
   }
 
-  // 整数乘法
+  // 整数乘法, 竖式
   getMultiplyQs(n) {
     const result: Array<string> = [];
+    let a = 0;
+    let b = 0;
     for (let i = 0; i < n; i++) {
-      result.push(this.getMultiplyQ());
+      a = util.get2DigitNumber();
+      b = util.get2DigitNumber();
+      while (a % 10 === 0 || b % 10 === 0) {
+        a = util.get2DigitNumber();
+        b = util.get2DigitNumber();
+      }
+      result.push(this.returnMultiply(a, b) + ' = ');
     }
     return result;
-  }
-
-  private getMultiplyQ() {
-    return util.get2DigitNumber().toString().concat(' x ').concat(util.get2DigitNumber().toString()).concat(' = ');
   }
 
   // 简单乘法
