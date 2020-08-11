@@ -26,6 +26,8 @@
 
 .grid {
 
+  font-size: 1.2rem;
+
   .reload {
     cursor: pointer;
     color: blue;
@@ -41,7 +43,7 @@
     display: grid;
     gap: 5px 0;
 
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(7, auto);
   }
 
 
@@ -58,7 +60,7 @@
     display: grid;
     grid-template-columns: repeat(5, auto);
 
-    .dds-item{
+    .dds-item {
       height: 90px;
     }
   }
