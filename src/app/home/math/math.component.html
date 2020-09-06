@@ -1,28 +1,53 @@
 <div class="container grid">
-  <div class="py-auto reload align-middle float-right">
-    <a (click)="generateContent()">生成新题目</a>
-  </div>
-  <div class="mr-2 reload align-middle float-right">
-    <a (click)="go()">30题版</a>
-  </div>
-  <h3 class='title text-center'>每日训练（90题）</h3>
+  <div class="header mb-3">
 
+    <div class="item text-left align-middle">
+      <span class="mr-2 reload ">
+        <a (click)="go()">切换30题版</a>
+      </span>
 
-  <h5 class="title">一、直接写出得数（50题）</h5>
+      <span class="py-auto reload  ">
+        <a (click)="generateContent()">生成新题目</a>
+      </span>
+    </div>
+
+    <div class="item text-center">
+      <div class='title'>每日训练（90题）</div>
+    </div>
+
+    <div class="item text-right">
+      <div class='row mb-2'>
+        <div class='label'>姓名：</div>
+        <div class='underline'></div>
+      </div>
+      <div class='row'>
+        <div class='label'>日期：</div>
+        <div class='underline'></div>
+        <div class='label'>年</div>
+        <div class='underline'></div>
+        <div class='label'>月</div>
+        <div class='underline'></div>
+        <div class='label'>日</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h5 class="title mb-1">一、直接写出得数（50题）</h5>
   <div class="kousuan mb-3">
     <div *ngFor="let m of kousuan">
       <div>{{m}}</div>
     </div>
   </div>
 
-  <h5 class="title">二、竖式（20题）</h5>
+  <h5 class="title mb-1">二、竖式（20题）</h5>
   <div class="shushi mb-3 ">
     <div class='shushi-item' *ngFor="let m of shushi">
       <div> {{m}} </div>
     </div>
   </div>
 
-  <h5 class="title">三、递等式（20题）</h5>
+  <h5 class="title mb-1">三、递等式（20题）</h5>
   <div class="didengshi mb-3">
     <div class="dds-item" *ngFor="let m of lianshi">
       <div>{{m}}</div>
