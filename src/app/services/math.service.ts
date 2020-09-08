@@ -139,6 +139,56 @@ export class MathService {
     return (i * j).toString().concat(' ÷ ').concat(i.toString()).concat(' = ');
   }
 
+  getSimple2DigitDivideQs(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+      result.push(this.getSimple2DigitDivideQ());
+    }
+    return result;
+  }
+  private getSimple2DigitDivideQ() {
+
+    let result = '';
+    let i = util.get2DigitNumber();
+    let j = util.get1DigitNumber();
+
+    while (i === 0 || j === 0 || i % j > 0) {
+      i = util.get2DigitNumber();
+      j = util.get1DigitNumber();
+    }
+
+    result = (i * 10).toString().concat(' ÷ ').concat((j * 10).toString()).concat(' = ');
+
+    console.log(result);
+
+    return result;
+  }
+
+  getComplex2DigitDivideQs(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+      result.push(this.getComplex2DigitDivideQ());
+    }
+    return result;
+  }
+  private getComplex2DigitDivideQ() {
+
+    let result = '';
+    let i = util.get3DigitNumber();
+    let j = util.get1DigitNumber();
+
+    while (i < 100 || j === 0) {
+      i = util.get3DigitNumber();
+      j = util.get1DigitNumber();
+    }
+
+    result = (i).toString().concat(' ÷ ').concat((j * 10).toString()).concat(' = ');
+
+    console.log(result);
+
+    return result;
+  }
+
 
   // a*(b+c)
   // a*(b-c)

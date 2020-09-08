@@ -34,10 +34,12 @@ export class Math2Component implements OnInit {
     this.kousuan = this.kousuan.concat(this.mservice.getDigitPlusQs(2));
     this.kousuan = this.kousuan.concat(this.mservice.getDigitMinusQs(3));
     this.kousuan = this.kousuan.concat(this.mservice.getMinusQs(3));
-    this.kousuan = this.kousuan.concat(this.mservice.getSimpleMultiplyQs(5));
-    this.kousuan = this.kousuan.concat(this.mservice.getSimpleDivideQs(5));
+    this.kousuan = this.kousuan.concat(this.mservice.getSimpleMultiplyQs(3));
+    this.kousuan = this.kousuan.concat(this.mservice.getSimpleDivideQs(3));
+    this.kousuan = this.kousuan.concat(this.mservice.getSimple2DigitDivideQs(4));
 
-    this.shushi = this.shushi.concat(this.mservice.getMultiplyQs(6));
+    this.shushi = this.shushi.concat(this.mservice.getMultiplyQs(3));
+    this.shushi = this.shushi.concat(this.mservice.getComplex2DigitDivideQs(3));
 
     // this.lianshi = this.lianshi.concat(this.mservice.getComplexQ1(1));
     // this.lianshi = this.lianshi.concat(this.mservice.getComplexQ2(1));
