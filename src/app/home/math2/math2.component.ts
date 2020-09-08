@@ -53,6 +53,11 @@ export class Math2Component implements OnInit {
   go() {
     this.router.navigate(['']);
   }
+
+  print() {
+    window.print();
+  }
+
   ngOnInit(): void {
   }
 
