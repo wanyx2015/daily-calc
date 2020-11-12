@@ -30,16 +30,17 @@ export class Math2Component implements OnInit {
     this.lianshi = [];
     this.shushi = [];
 
-    this.kousuan = this.kousuan.concat(this.mservice.getPlusQs(2));
-    this.kousuan = this.kousuan.concat(this.mservice.getDigitPlusQs(2));
-    this.kousuan = this.kousuan.concat(this.mservice.getDigitMinusQs(3));
-    this.kousuan = this.kousuan.concat(this.mservice.getMinusQs(3));
-    this.kousuan = this.kousuan.concat(this.mservice.getSimpleMultiplyQs(3));
-    this.kousuan = this.kousuan.concat(this.mservice.getSimpleDivideQs(3));
-    this.kousuan = this.kousuan.concat(this.mservice.getSimple2DigitDivideQs(4));
+    // this.kousuan = this.kousuan.concat(this.mservice.getPlusQs(2));
+    // this.kousuan = this.kousuan.concat(this.mservice.getDigitPlusQs(2));
+    // this.kousuan = this.kousuan.concat(this.mservice.getDigitMinusQs(3));
+    // this.kousuan = this.kousuan.concat(this.mservice.getMinusQs(3));
+    // this.kousuan = this.kousuan.concat(this.mservice.getSimpleMultiplyQs(3));
+    this.kousuan = this.kousuan.concat(this.mservice.getSimpleDivideQs(12));
+    this.kousuan = this.kousuan.concat(this.mservice.getSimple2DigitDivideQs(8));
 
     this.shushi = this.shushi.concat(this.mservice.getMultiplyQs(3));
-    this.shushi = this.shushi.concat(this.mservice.getComplex2DigitDivideQs(3));
+    // this.shushi = this.shushi.concat(this.mservice.getComplex2DigitDivideQs(7));
+    this.shushi = this.shushi.concat(this.mservice.getComplexPlus2DigitDivideQs(3));
 
     // this.lianshi = this.lianshi.concat(this.mservice.getComplexQ1(1));
     // this.lianshi = this.lianshi.concat(this.mservice.getComplexQ2(1));

@@ -164,6 +164,32 @@ export class MathService {
     return result;
   }
 
+  getComplexPlus2DigitDivideQs(n) {
+    const result: Array<string> = [];
+    for (let i = 0; i < n; i++) {
+      result.push(this.getComplexPlus2DigitDivideQ());
+    }
+    return result;
+  }
+
+  private getComplexPlus2DigitDivideQ() {
+
+    let result = '';
+    let i = util.get3DigitNumber();
+    let j = util.get2DigitNumber();
+
+    while (i < 100 || j === 0) {
+      i = util.get3DigitNumber();
+      j = util.get1DigitNumber();
+    }
+
+    result = (i).toString().concat(' ÷ ').concat(j.toString()).concat(' = ');
+
+    console.log(result);
+
+    return result;
+  }
+
   getComplex2DigitDivideQs(n) {
     const result: Array<string> = [];
     for (let i = 0; i < n; i++) {
