@@ -1,0 +1,70 @@
+.grid {
+
+  font-size: 1.2rem;
+
+  .reload {
+    cursor: pointer;
+    color: blue;
+    font-size: 14px;
+  }
+
+  .title {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    align-items: center;
+
+    .item {
+      align-items: center;
+
+      .row {
+        display: flex;
+        margin: 0;
+      }
+
+      .underline {
+        flex-grow: 1;
+        border-bottom: 1px solid black;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .kousuan {
+    display: grid;
+    gap: 2rem 0;
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .shushi {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+
+    .item {
+      height: 20rem;
+    }
+  }
+
+  .didengshi {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+
+    .item {
+      height: 10rem;
+    }
+  }
+}
+
+
+@media print {
+
+  /* All your print styles go here */
+  .helper {
+    visibility: hidden;
+  }
+}

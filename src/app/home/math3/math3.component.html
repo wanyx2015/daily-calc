@@ -1,0 +1,62 @@
+<div class="container grid">
+
+  <div class="header mb-3">
+
+    <div class="item text-left align-middle helper">
+      <!-- <span class="mr-2 reload ">
+        <a (click)="go()">切换30题版</a>
+      </span> -->
+
+      <span class="py-auto reload mr-2">
+        <a (click)="generateContent()">生成新题目</a>
+      </span>
+
+      <span class="reload">
+        <a (click)="print()">打印</a>
+      </span>
+    </div>
+
+    <div class="item text-center">
+      <div class='title'>每日计算（60题）</div>
+    </div>
+
+    <div class="item text-right">
+      <div class='row mb-2'>
+        <div class='label'>姓名：</div>
+        <div class='underline'></div>
+      </div>
+      <div class='row'>
+        <div class='label'>日期：</div>
+        <div class='underline'></div>
+        <div class='label'>年</div>
+        <div class='underline'></div>
+        <div class='label'>月</div>
+        <div class='underline'></div>
+        <div class='label'>日</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h5 class="title mb-5">直接写出得数</h5>
+  <div class="kousuan mb-5">
+    <div *ngFor="let m of kousuan">
+      <div>{{m}}</div>
+    </div>
+  </div>
+<!--
+  <h5 class="title mb-3">二、竖式（6题）</h5>
+  <div class="shushi mb-5">
+    <div class="item" *ngFor="let m of shushi">
+      <div> {{m}} </div>
+    </div>
+  </div>
+
+  <h5 class="title mb-3">三、递等式（4题）</h5>
+  <div class="didengshi mb-5">
+    <div class="item" *ngFor="let m of lianshi">
+      <div>{{m}}</div>
+    </div>
+  </div> -->
+
+</div>
